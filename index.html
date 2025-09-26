@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Perusahaan</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .section-separator {
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        .text-section-p {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="p-4 md:p-6 flex items-center justify-between section-separator sticky top-0 bg-white z-10">
+        <div class="flex items-center space-x-2">
+            <!-- Logo placeholder -->
+            <div class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-white text-lg font-bold">H</div>
+            <span class="font-semibold text-xl">MyWebsite</span>
+        </div>
+        <nav>
+            <ul class="flex space-x-4 md:space-x-8 text-sm md:text-base font-medium">
+                <li><a href="#home" class="nav-link text-gray-600 hover:text-blue-600 transition-colors">Home</a></li>
+                <li><a href="#profile" class="nav-link text-gray-600 hover:text-blue-600 transition-colors">My Profile</a></li>
+                <li><a href="#portfolio" class="nav-link text-gray-600 hover:text-blue-600 transition-colors">Portfolio</a></li>
+                <li><a href="#contact" class="nav-link text-gray-600 hover:text-blue-600 transition-colors">Message Us</a></li>
+                <li><a href="#achievement" class="nav-link text-gray-600 hover:text-blue-600 transition-colors">Achievement</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Content Container -->
+    <div id="page-container">
+        <!-- Halaman 1: Home (Form Belajar) -->
+        <div id="home" class="page container mx-auto px-4 py-8 md:py-16 text-center section-separator">
+            <h1 class="text-2xl md:text-3xl font-bold mb-2">Form Belajar</h1>
+            <p class="text-gray-500 mb-8">Ini adalah website latihan pertama</p>
+            <!-- Image Placeholder -->
+            <div class="w-full max-w-3xl h-64 md:h-96 mx-auto bg-gray-200 flex items-center justify-center text-gray-400">
+                1366x678
+            </div>
+            <!-- Message Us Section -->
+            <section class="container mx-auto px-4 py-8 md:py-16">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">Message Us</h2>
+                <div class="flex flex-col lg:flex-row lg:space-x-8">
+                    <!-- Form Input -->
+                    <div class="w-full lg:w-1/3 mb-8 lg:mb-0">
+                        <form id="messageForm" class="space-y-4">
+                            <div>
+                                <label for="form-name" class="block text-sm font-medium text-gray-700 mb-1">Nama</label>
+                                <input type="text" id="form-name" name="name" placeholder="Nama" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                            </div>
+                            <div>
+                                <label for="form-date" class="block text-sm font-medium text-gray-700 mb-1">Tanggal Lahir</label>
+                                <input type="date" id="form-date" name="date" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Jenis Kelamin</label>
+                                <div class="flex items-center space-x-4">
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="gender" value="Laki-Laki" class="form-radio text-blue-600">
+                                        <span class="ml-2">Laki-Laki</span>
+                                    </label>
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="gender" value="Perempuan" class="form-radio text-blue-600">
+                                        <span class="ml-2">Perempuan</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="form-message" class="block text-sm font-medium text-gray-700 mb-1">Pesan</label>
+                                <textarea id="form-message" name="message" rows="4" placeholder="Pesan" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-3 px-6 rounded-md shadow-lg hover:bg-blue-700 transition-colors">
+                                    Submit
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Output Display with table -->
+                    <div class="w-full lg:w-2/3 p-4 bg-gray-100 rounded-lg shadow-inner table-container">
+                        <table id="dataTable" class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tanggal Lahir</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Jenis Kelamin</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Pesan</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Profile</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <!-- Data will be dynamically added here. It is empty by default. -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Halaman 2: My Profile (Our Facilitation) -->
+        <div id="profile" class="page hidden container mx-auto px-4 py-8 md:py-16 text-center section-separator">
+            <h1 class="text-2xl md:text-3xl font-bold mb-2">Our Facilitation</h1>
+            <p class="text-gray-500 mb-8">Halaman ini adalah profil Anda.</p>
+            <div class="flex flex-wrap justify-center items-center space-x-4 md:space-x-12 mt-8">
+                <div class="flex flex-col items-center">
+                    <div class="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-gray-400 mb-2"></div>
+                    <p class="font-medium text-gray-700">Professional Teacher</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-gray-400 mb-2"></div>
+                    <p class="font-medium text-gray-700">Sport Field</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-gray-400 mb-2"></div>
+                    <p class="font-medium text-gray-700">Classroom</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Halaman 3: Portfolio (E-Groceries) -->
+        <div id="portfolio" class="page hidden container mx-auto px-4 py-8 md:py-16 section-separator">
+            <header class="text-center mb-8">
+                <h1 class="text-3xl md:text-4xl font-bold mb-2">Top Rated E-Groceries Shop in Indonesian</h1>
+                <p class="text-gray-500">Every Day with best ingredients</p>
+            </header>
+            <div class="flex flex-col lg:flex-row lg:space-x-8">
+                <div class="w-full lg:w-1/2 mb-8 lg:mb-0">
+                    <div class="w-full h-64 md:h-96 mx-auto bg-gray-200 flex items-center justify-center text-gray-400">
+                        Image Placeholder
+                    </div>
+                    <div class="mt-4 text-center text-gray-600 italic">"Tetap segar hari hari sayur buah yang fresh disini"</div>
+                </div>
+                <div class="w-full lg:w-1/2 p-4 rounded-lg bg-gray-100">
+                    <h2 class="font-semibold text-lg text-gray-800 mb-4">Contact Us</h2>
+                    <p class="text-sm text-gray-500 mb-4">Sales akan menghubungi Anda 1x24 jam setelah data kami terima.</p>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name-contact" class="block text-sm font-medium text-gray-700">Your Name</label>
+                            <input type="text" id="name-contact" placeholder="First and last name" class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                        </div>
+                        <div>
+                            <label for="email-contact" class="block text-sm font-medium text-gray-700">Email Address</label>
+                            <input type="email" id="email-contact" placeholder="ex.example@email.com" class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                        </div>
+                        <div>
+                            <label for="interest-select" class="block text-sm font-medium text-gray-700">What are you interested in?</label>
+                            <select id="interest-select" class="w-full px-4 py-2 border border-gray-300 rounded-md">
+                                <option>Pilih Opsi</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-3 px-6 rounded-md shadow-lg hover:bg-blue-700 transition-colors">
+                            SEND
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="mt-12 text-center text-gray-600 text-section-p">
+                <p>Use this space to provide users with more information about your offer. Consider it a follow up to your headline and explain the benefits of your service or product</p>
+                <div class="mt-8 space-y-4">
+                    <p>1. Your first feature, written in the form of a benefit statement.</p>
+                    <p>2. Your second feature, written in the form of a benefit statement.</p>
+                    <p>3. Your third feature, written in the form of a benefit statement.</p>
+                </div>
+            </div>
+            <div class="text-center mt-12 mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-8">Our Package</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-100 p-6 rounded-lg shadow-md flex items-start space-x-4">
+                        <span class="text-3xl">🛒</span>
+                        <div>
+                            <h3 class="font-semibold text-lg">Fresh Vegetable</h3>
+                            <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-lg shadow-md flex items-start space-x-4">
+                        <span class="text-3xl">🍎</span>
+                        <div>
+                            <h3 class="font-semibold text-lg">Fresh Fruit</h3>
+                            <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-lg shadow-md flex items-start space-x-4">
+                        <span class="text-3xl">🚚</span>
+                        <div>
+                            <h3 class="font-semibold text-lg">Instant Delivery</h3>
+                            <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-lg shadow-md flex items-start space-x-4">
+                        <span class="text-3xl">🧂</span>
+                        <div>
+                            <h3 class="font-semibold text-lg">Kitchen Ingredient</h3>
+                            <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-lg shadow-md flex items-start space-x-4">
+                        <span class="text-3xl">🍳</span>
+                        <div>
+                            <h3 class="font-semibold text-lg">Kitchen Set</h3>
+                            <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-lg shadow-md flex items-start space-x-4">
+                        <span class="text-3xl">🎁</span>
+                        <div>
+                            <h3 class="font-semibold text-lg">Bundling Set</h3>
+                            <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center py-8 md:py-16">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">Your Closing Argument Headline</h2>
+                <p class="text-gray-600 max-w-xl mx-auto mb-8">Terperniside ognissis rhenus urso in labenidum. Dures simus niqian, maiored sud jeins quis, nonsulls insidiant rian. Phenellus fringilla nalla retsinat fringilla.</p>
+                <button class="bg-blue-600 text-white font-semibold py-3 px-8 rounded-md shadow-lg hover:bg-blue-700 transition-colors">
+                    CALL TO ACTION
+                </button>
+            </div>
+        </div>
+
+        <!-- Halaman 4: Message Us (Separate from Home) -->
+        <div id="contact" class="page hidden container mx-auto px-4 py-8 md:py-16 section-separator">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">Message Us</h2>
+            <div class="flex flex-col lg:flex-row lg:space-x-8">
+                <!-- Form Input -->
+                <div class="w-full lg:w-1/3 mb-8 lg:mb-0">
+                    <form id="messageFormContact" class="space-y-4">
+                        <div>
+                            <label for="form-name-contact" class="block text-sm font-medium text-gray-700 mb-1">Nama</label>
+                            <input type="text" id="form-name-contact" name="name" placeholder="Nama" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                        </div>
+                        <div>
+                            <label for="form-date-contact" class="block text-sm font-medium text-gray-700 mb-1">Tanggal Lahir</label>
+                            <input type="date" id="form-date-contact" name="date" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Jenis Kelamin</label>
+                            <div class="flex items-center space-x-4">
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="gender" value="Laki-Laki" class="form-radio text-blue-600">
+                                    <span class="ml-2">Laki-Laki</span>
+                                </label>
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="gender" value="Perempuan" class="form-radio text-blue-600">
+                                    <span class="ml-2">Perempuan</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="form-message-contact" class="block text-sm font-medium text-gray-700 mb-1">Pesan</label>
+                            <textarea id="form-message-contact" name="message" rows="4" placeholder="Pesan" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-3 px-6 rounded-md shadow-lg hover:bg-blue-700 transition-colors">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <!-- Output Display with table -->
+                <div class="w-full lg:w-2/3 p-4 bg-gray-100 rounded-lg shadow-inner table-container">
+                    <table id="dataTableContact" class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tanggal Lahir</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Jenis Kelamin</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Pesan</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Profile</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <!-- Data will be dynamically added here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Halaman 5: Achievement (Our Headquarter) -->
+        <div id="achievement" class="page hidden container mx-auto px-4 py-8 md:py-16 text-center section-separator">
+            <h1 class="text-2xl md:text-3xl font-bold mb-2">Our Headquarter</h1>
+            <div class="flex flex-wrap justify-center items-center space-x-4 md:space-x-12 mt-8">
+                <div class="flex flex-col items-center">
+                    <div class="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-gray-400 mb-2"></div>
+                    <p class="font-medium text-gray-700">Jakarta</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-gray-400 mb-2"></div>
+                    <p class="font-medium text-gray-700">Bandung</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-gray-400 mb-2"></div>
+                    <p class="font-medium text-gray-700">Surabaya</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="p-4 md:p-6 text-center text-sm text-gray-500">
+        <div class="space-x-4 mb-2">
+            <a href="#" class="hover:text-blue-600">Terms of Service</a>
+            <a href="#" class="hover:text-blue-600">Privacy Policy</a>
+        </div>
+        <div>
+            © 2024 MyWebsite
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const messageForm = document.getElementById('messageForm');
+            const dataTableBody = document.querySelector('#dataTable tbody');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pages = document.querySelectorAll('.page');
+
+            // Fungsi untuk menampilkan halaman yang dipilih
+            function showPage(pageId) {
+                pages.forEach(page => {
+                    page.classList.add('hidden');
+                });
+                const activePage = document.getElementById(pageId);
+                if (activePage) {
+                    activePage.classList.remove('hidden');
+                }
+            }
+
+            // Atur event listener untuk setiap link navigasi
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const pageId = e.target.getAttribute('href').substring(1);
+                    showPage(pageId);
+                });
+            });
+
+            // Tampilkan halaman 'home' saat pertama kali dimuat
+            showPage('home');
+
+            // Event listener untuk form pengiriman data
+            messageForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const formData = new FormData(messageForm);
+                const name = formData.get('name') || '';
+                const date = formData.get('date') || '';
+                const gender = formData.get('gender') || '';
+                const message = formData.get('message') || '';
+
+                if (!name || !date || !gender || !message) {
+                    alert('Semua kolom harus diisi.');
+                    return;
+                }
+
+                // Buat baris baru untuk tabel
+                const newRow = document.createElement('tr');
+                newRow.innerHTML = `
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${name}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${date}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${gender}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${message}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium"><a href="#" class="text-blue-600 hover:text-blue-900">Klik Disini</a></td>
+                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"><a href="#" class="text-red-600 hover:text-red-900" onclick="this.closest('tr').remove(); return false;">🗑️</a></td>
+                `;
+
+                // Tambahkan baris ke tabel
+                dataTableBody.prepend(newRow);
+
+                // Reset formulir setelah pengiriman
+                messageForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>
